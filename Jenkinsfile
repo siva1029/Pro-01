@@ -15,18 +15,6 @@ pipeline{
             }
         }
 
-        // Add this new stage to install required packages
-        stage('Install System Dependencies') {
-            steps {
-                script {
-                    echo 'Installing required system dependencies...'
-                    sh '''
-                    apt update
-                    apt install -y python3-venv
-                    '''
-                }
-            }
-        }
 
         stage('Setting up our Virtual Environment and Installing dependancies'){
             steps{
